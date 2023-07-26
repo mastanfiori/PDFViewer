@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: "2.6"
+metadata:
+  name: com.nttdata.covercraft.r126pdfview
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: DS4_BAS_200_WS1
+          url: http://ws1:8000
+        app:
+          name: ZPALLETREPORT
+          description: Pallet Report
+          package: ZMM_WAVE2
+          transport: DS4K903727
+        exclude:
+          - /test/

@@ -1,0 +1,87 @@
+<core:FragmentDefinition 	xmlns="sap.ui.comp.valuehelpdialog"
+	xmlns:m="sap.m"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:core="sap.ui.core">
+    <!-- <SelectDialog
+        id="_IDGenSelectDialogDelivery"
+        title="Delivery"
+        class="sapUiPopupWithPadding"
+          items="{
+			path : 'Delivery>/'
+		}"
+        search="_handleDeliveryValueHelpSearch"
+        confirm="_handleDeliveryValueHelpConfirm"
+        cancel="_handleValueHelpDialogClose"
+        liveChange="_handleDeliveryValueHelpSearch"
+    >
+        <StandardListItem id="_IDGenStandardListItemDelivery" title="{Delivery>Vbeln}" />
+    </SelectDialog> -->
+<ValueHelpDialog 
+		title="Product"
+		ok=".onValueHelpOkPress"
+		cancel=".onValueHelpCancelPress"
+		afterClose=".onValueHelpAfterClose"
+		supportRanges="true"
+		key="DeliveryDocument"
+		descriptionKey="DeliveryDocumentType"
+		supportMultiselect="false">
+		<filterBar>
+			<fb:FilterBar  advancedMode="true" search=".onFilterBarSearch" isRunningInValueHelpDialog="true">
+				<fb:filterGroupItems>
+					<fb:FilterGroupItem 
+						groupName="__$INTERNAL$"
+						name="DeliveryDocument"
+						label="Delivery Document"
+						visibleInFilterBar="false"
+					>
+						<fb:control>
+							<m:Input  name="DeliveryDocument" />
+						</fb:control>
+					</fb:FilterGroupItem>
+					<!-- <fb:FilterGroupItem 
+						groupName="__$INTERNAL$"
+						name="DeliveryDocumentType"
+						label="Delivery Document Type"
+						visibleInFilterBar="true"
+					>
+						<fb:control>
+							<m:Input  name="DeliveryDocument" />
+						</fb:control>
+					</fb:FilterGroupItem> -->
+					<fb:FilterGroupItem 
+						groupName="__$INTERNAL$"
+						name="Material"
+						label="Material"
+						visibleInFilterBar="false"
+					>
+						<fb:control>
+							<m:Input  name="Material" />
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem 
+						groupName="__$INTERNAL$"
+						name="ShipToParty"
+						label="ShipToParty"
+						visibleInFilterBar="false"
+					>
+						<fb:control>
+							<m:Input  name="ShipToParty" />
+						</fb:control>
+					</fb:FilterGroupItem>
+					<fb:FilterGroupItem 
+						groupName="__$INTERNAL$"
+						name="SoldToParty"
+						label="SoldToParty"
+						visibleInFilterBar="false"
+					>
+						<fb:control>
+							<m:Input  name="SoldToParty" />
+						</fb:control>
+					</fb:FilterGroupItem>
+					
+				</fb:filterGroupItems>
+			</fb:FilterBar>
+		</filterBar>
+	</ValueHelpDialog>
+
+</core:FragmentDefinition>
